@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
-require 'daemons'
+require "daemons"
+require "megaleech_client"
 
-controller = Megaleech::TorrentsController.new
 Daemons.run_proc("megaleech") do
   loop do
-    system "ssh -R #{Megaleech.client_port}:localhost:22 #{Megaleech.remote_user}@#{Megaleech.remote_host} \"MEGALEECH_USER=#{Megaleech.client_user} MEGALEECH_PORT=#{Megaleech.client_port} MEGALEECH_DESTINATION=#{Megaleech.client_download_directory} megaleech_server download \""
+    puts "ssh -R #{Megaleech.client_port}:localhost:22 #{Megaleech.remote_user}@#{Megaleech.remote_host} \"MEGALEECH_USER=#{Megaleech.client_user} MEGALEECH_PORT=#{Megaleech.client_port} MEGALEECH_DESTINATION=\\\"#{Megaleech.client_download_directory}\\\" megaleech_server download\""
+    system "ssh -R #{Megaleech.client_port}:localhost:22 #{Megaleech.remote_user}@#{Megaleech.remote_host} \"MEGALEECH_USER=#{Megaleech.client_user} MEGALEECH_PORT=#{Megaleech.client_port} MEGALEECH_DESTINATION=\\\"#{Megaleech.client_download_directory}\\\" megaleech_server download\""
     sleep(300)
   end
 end

@@ -33,6 +33,14 @@ module Megaleech
       @config.client_download_directory
     end
 
+    def remote_host
+      @config.remote_host
+    end
+
+    def remote_user
+      @config.remote_user
+    end
+
   end
 
 end

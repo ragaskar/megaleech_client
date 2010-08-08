@@ -19,11 +19,11 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     "bin/megaleech_client",
-     "lib/megaleech.rb",
      "lib/megaleech/config/.megaleech.rc",
      "lib/megaleech/config/boot.rb",
      "lib/megaleech/contrib/parseconfig/parseconfig.rb",
-     "lib/megaleech/models/config.rb"
+     "lib/megaleech/models/config.rb",
+     "lib/megaleech_client.rb"
   ]
   s.homepage = %q{http://github.com/ragaskar/megaleech}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -31,15 +31,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Megaleech uses your Google Reader account to automatically add starred torrents to Rtorrent}
   s.test_files = [
-    "spec/megaleech/contrib/processors/tv_torrents_spec.rb",
-     "spec/megaleech/controllers/downloads_controller_spec.rb",
-     "spec/megaleech/controllers/torrents_controller_spec.rb",
-     "spec/megaleech/models/config_spec.rb",
-     "spec/megaleech/models/google_reader_feed_entry_spec.rb",
-     "spec/megaleech/models/google_reader_spec.rb",
-     "spec/megaleech/models/rtorrent_spec.rb",
-     "spec/megaleech/models/torrent_spec.rb",
-     "spec/scripts/test_server.rb",
+    "spec/scripts/test_server.rb",
      "spec/spec_helper.rb"
   ]
 
