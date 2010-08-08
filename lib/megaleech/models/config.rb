@@ -5,14 +5,6 @@ module Megaleech
       @config = nil
     end
 
-    def proxy_url
-      config.params['proxy'] && config.params['proxy']['url']
-    end
-
-    def proxy_port
-      config.params['proxy'] && config.params['proxy']['port']
-    end
-
     def client_port
       config.params['client']['port'] || 1234
     end
@@ -31,26 +23,6 @@ module Megaleech
 
     def client_download_directory
       config.params['client']['download_root_path']
-    end
-
-    def user
-      config.params['google_reader']['user']
-    end
-
-    def password
-      config.params['google_reader']['password']
-    end
-
-    def processor_class_name(source)
-      config.params['torrent_processors'][source]
-    end
-
-    def download_directory
-      return_path_if_present(config.params['torrents']['download_root_path'])
-    end
-
-    def rtorrent_socket
-      config.params['rtorrent']['socket_path']
     end
 
     private
